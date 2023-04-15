@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" type="image" href="images/f.ico">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <title>Weather App</title>
+</head>
+<body class="text-Light2 relative">
+    <div id="wrapper" class="min-h-[100vh] w-[100vw] md:h-[100vh] md:overflow-y-auto pt-8 flex flex-col items-center">
+        <!-- Heading  -->
+        <div class="header text-center md:text-5xl text-2xl sm:3xl font-semibold  text-white mb-7" >WEATHER APP</div>
+
+        <!-- tab container -->
+        <div class="tab-container flex lg:w-[35%] md:w-9/12 w-11/12 justify-between">
+            <p class="tab p-1 px-4 sm:text-lg text-base cursor-pointer" data-userTab>Your weather </p>
+            <p class="tab p-1  px-2 w-32 text-base cursor-pointer" data-searchTab>Search weather </p>
+        </div>
+        <!-- weather container -->
+        <div class="weather-container flex flex-col items-center lg:w-[35%]  md:w-9/12 w-11/12 justify-center mt-10">
+            <!-- user container -->
+            <div class="grant-location-container hidden" user-info-container>
+                <img src="images/location.png" alt="" class="" width="80px">
+                <p class="text-xl sm:text-3xl font-semibold ">Grant Location Access</p>
+                <p class="text-center sm:text-left">Allow Access To Get Weather Information</p>
+                <button type="button" class="mt-5  p-2 px-10 rounded-lg bg-Dark2 text-Light2" data-grantAccess>Grant Access</button>
+            </div>
+
+            <!-- search container -->
+            <div class="search-location w-full sm:my-5 mb-16">
+                <form id="form-container" class="hidden">
+                    <input type="text" placeholder="Search for city..." class="border-red-300 w-11/12 bg-[rgba(219,226,239,0.5)] placeholder:text-Light1 placeholder:text-lg  rounded-md md:p-1 mx-1 mr-4 text-white px-4 outline-2 outline-Light1" search-input>
+                    <button class="md:w-11 md:h-11 w-8 h-8 rounded-full bg-Dark2 flex justify-center items-center" search-weather-btn>
+                        <img src="images/search.png" alt="" class="" width="20px" height="20px" class="w-[8px] h-[8px] md:w-[20px] md:h-[20px]">
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- loading container -->
+        <div class="loading-container hidden">
+            <img src="images/loading.gif" alt="" width="150px" height="150px">
+            <p>loading</p>
+        </div>
+
+        <!-- show weater info -->
+        <div class="show-weather-info w-6/12 h-full hidden">
+            <!-- country name and flag -->
+            <div class="flex space-x-2">
+                <p class="text-2xl sm:text-3xl" city-name></p>
+                <div class="w-[30px] h-[30px] mt-4">
+                <img class="-mt-1" width="30px" height="30px"  country-icon>
+                </div>
+            </div>
+            
+            <!-- weather discription -->
+            <p class="text-lg" data-weather-description></p>
+            <!-- weater icon -->
+            <img width="80px"  height="80px"  weather-icon>
+            <!-- weater temp -->
+            <div class="text-2xl sm:text-4xl font-bold pb-8" temperature></div>
+
+            <!-- 3-cards -->
+            <div class="flex flex-col md:flex-row mb-20  md:space-x-6 space-y-4 md:space-y-0 justify-center items-end text-white pb-10">
+                <!-- card1 -->
+                <div class="parameter card1 bg-[rgba(219,226,239,0.5)] w-52 h-40 flex flex-col justify-center items-center rounded-md space-y-1">
+                    <img src="images/wind.png" alt="" width="50px" height="50px">
+                    <p class=" text-2xl tracking-wide">WINDSPEED</p>
+                    <p class=" text-2xl" data-windspeed></p>
+                </div>
+                <!-- card2 -->
+                <div class="parameter card2 bg-[rgba(219,226,239,0.5)] w-52 h-40 flex flex-col justify-center items-center rounded-md space-y-1">
+                    <img src="images/humidity.png" alt="" width="50px" height="50px">
+                    <p class=" text-2xl tracking-wide uppercase">humidity</p>
+                    <p class=" text-2xl" data-humidity></p>
+                </div>
+                <!-- card3 -->
+                <div class="parameter card3 bg-[rgba(219,226,239,0.5)] w-52 h-40 flex flex-col justify-center items-center rounded-md space-y-1">
+                    <img src="images/cloud.png" alt="" width="50px" height="50px">
+                    <p class=" text-2xl tracking-wide uppercase"> cloud</p>
+                    <p class=" text-2xl" data-cloud></p>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Not found city -->
+        <div class="city-not-found hidden mb-20" cityError>
+            <img src="images/not-found.png" alt="" width="400px" height="400px" class="w-[300px] h-[300px] md:w-[400px] md:h-[400px] ">
+            <p class="text-2xl text-Light2 text-center">City not found</p>
+        </div>
+
+        <!-- copyright -->
+        <p class="copyright text-sky-300 text-base font-serif tracking-[0.2rem] absolute bottom-0 right-0"><span class="text-red-600 -mr-1 "><i class="fa-regular fa-copyright"></i></span><span class="text-Dark1 ml-1">A</span>bhishek</p>
+    </div>
+
+    <!-- js------- -->
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/d3cb673d00.js" crossorigin="anonymous"></script>
+</body> 
+</html>

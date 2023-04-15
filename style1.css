@@ -1,0 +1,35 @@
+
+#wrapper{
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+  }
+  .tab.current-tab{
+    background-color: rgba(224, 224, 224, 0.552);
+    border-radius: 4px;
+  }
+  .grant-location-container.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-container.active{
+    display: flex;
+  }
+  .loading-container.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .show-weather-info.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .city-not-found.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
